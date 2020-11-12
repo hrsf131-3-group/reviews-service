@@ -27,10 +27,20 @@ var ReviewsModel = mongoose.model('Reviews', listingSchema);
 
 /*** PLAN FOR REVIEWS AND RATINGS SEPARATED SORTED BY LISTING_ID ***/
 
-for(var i = 0; i < 3; i++) {
+for(var i = 0; i < 100; i++) {
   const newListing = new ReviewsModel;
   newListing.listing_id = i + 1;
   var numReviews = Math.floor(Math.random() * 10);
+  if (numReviews === 0) {
+    newListing.save((err) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Added')
+      }
+    })
+    continue;
+  }
   var cleanliness = 0;
   var communication = 0;
   var checkIn = 0;
