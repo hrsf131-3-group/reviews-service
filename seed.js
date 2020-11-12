@@ -49,23 +49,21 @@ for(var i = 0; i < 100; i++) {
   var value = 0;
   var average = 0;
   for (var j = 0; j < numReviews; j++) {
-    var temp1 = Math.floor(Math.random() * (5 - 3) + 3);
-    var temp2 = Math.floor(Math.random() * (5 - 3) + 3);
-    var temp3 = Math.floor(Math.random() * (5 - 3) + 3);
-    var temp4 = Math.floor(Math.random() * (5 - 3) + 3);
-    var temp5 = Math.floor(Math.random() * (5 - 3) + 3);
-    var temp6 = Math.floor(Math.random() * (5 - 3) + 3);
+    var cleanTemp = Math.floor(Math.random() * (5 - 3) + 3);
+    var commTemp = Math.floor(Math.random() * (5 - 3) + 3);
+    var checkTemp = Math.floor(Math.random() * (5 - 3) + 3);
+    var accTemp = Math.floor(Math.random() * (5 - 3) + 3);
+    var locTemp = Math.floor(Math.random() * (5 - 3) + 3);
+    var valTemp = Math.floor(Math.random() * (5 - 3) + 3);
 
-    cleanliness += temp1;
-    communication += temp2;
-    checkIn += temp3;
-    accuracy += temp4;
-    location += temp5;
-    value += temp6;
+    cleanliness += cleanTemp;
+    communication += commTemp;
+    checkIn += checkTemp;
+    accuracy += accTemp;
+    location += locTemp;
+    value += valTemp;
 
-    // var avg = Math.round(((temp1 + temp2 + temp3 + temp4 + temp5 + temp6) / 6) *10) / 10
-    // console.log('avg', avg)
-    average += Math.round(((temp1 + temp2 + temp3 + temp4 + temp5 + temp6) / 6) *10) / 10;
+    average += Math.round(((cleanTemp + commTemp + checkTemp + accTemp + locTemp + valTemp) / 6) *10) / 10;
     newListing.reviews.push({
       image: faker.image.imageUrl(),
       name: faker.name.firstName(),
@@ -83,13 +81,6 @@ for(var i = 0; i < 100; i++) {
     value: Math.round((value / numReviews) * 10) / 10,
     average: Math.round((average / numReviews) * 10) / 10,
   }
-  // console.log('clean', cleanliness)
-  // console.log('commm', communication)
-  // console.log('check', checkIn)
-  // console.log('accuracy', accuracy)
-  // console.log('location', location)
-  // console.log('value', value)
-  // console.log('listing', newListing)
   newListing.save((err) => {
     if (err) {
       console.log(err)
