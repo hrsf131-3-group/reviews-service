@@ -19,6 +19,20 @@ app.get('/api/homes/:id/reviews', (req, res) => {
   })
 })
 
+app.post('/api/homes/:id/reviews', (req, res) => {
+  console.log('hello')
+  console.log(req.body)
+  db.addReview(req.body, (err) => {
+    if (err) {
+      console.log(err)
+      res.sendStatus(404);
+    } else {
+      console.log('success')
+      res.sendStatus(200);
+    }
+  })
+})
+
 app.listen(port, (err) => {
   if (err) {
     console.log(err)

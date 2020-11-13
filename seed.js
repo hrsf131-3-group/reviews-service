@@ -12,7 +12,7 @@ const generateListings = (numListings) => {
     newListing.listing_id = i;
     var numReviews = Math.floor(Math.random() * 10);
     if (numReviews === 0) {
-      Reviews.insertOne(newListing, (err) => {
+      Reviews.create(newListing, (err) => {
         if (err) {
           console.log(err);
         } else {
@@ -27,7 +27,7 @@ const generateListings = (numListings) => {
     generateReviews(newListing, numReviews);
     generateRatings(newListing, numReviews);
 
-    Reviews.insertOne(newListing, (err) => {
+    Reviews.create(newListing, (err) => {
       if (err) {
         console.log(err);
       } else {
@@ -59,12 +59,19 @@ const generateRatings = (listing, numReviews) => {
   var average = 0;
 
   for (var i = 0; i < numReviews; i++) {
-    var cleanTemp = Math.floor(Math.random() * (5 - 3) + 3);
-    var commTemp = Math.floor(Math.random() * (5 - 3) + 3);
-    var checkTemp = Math.floor(Math.random() * (5 - 3) + 3);
-    var accTemp = Math.floor(Math.random() * (5 - 3) + 3);
-    var locTemp = Math.floor(Math.random() * (5 - 3) + 3);
-    var valTemp = Math.floor(Math.random() * (5 - 3) + 3);
+    var cleanTemp = Math.floor(Math.random() * (6 - 3) + 3);
+    var commTemp = Math.floor(Math.random() * (6 - 3) + 3);
+    var checkTemp = Math.floor(Math.random() * (6 - 3) + 3);
+    var accTemp = Math.floor(Math.random() * (6 - 3) + 3);
+    var locTemp = Math.floor(Math.random() * (6 - 3) + 3);
+    var valTemp = Math.floor(Math.random() * (6 - 3) + 3);
+
+    // listing.reviews[i].cleanliness = cleanTemp;
+    // listing.reviews[i].communication = commTemp;
+    // listing.reviews[i].checkIn = checkTemp;
+    // listing.reviews[i].accuracy = accTemp;
+    // listing.reviews[i].location = locTemp;
+    // listing.reviews[i].value = valTemp;
 
     cleanliness += cleanTemp;
     communication += commTemp;
