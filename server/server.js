@@ -8,7 +8,8 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json());
 
 app.get('/api/homes/:id/reviews', (req, res) => {
-  db.findAll((err, data) => {
+
+  db.find(req.params.id, (err, data) => {
     if (err) {
       console.log(err)
       res.sendStatus(404);
@@ -17,7 +18,6 @@ app.get('/api/homes/:id/reviews', (req, res) => {
     }
   })
 })
-
 
 app.listen(port, (err) => {
   if (err) {

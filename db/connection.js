@@ -24,8 +24,8 @@ const listingSchema = mongoose.Schema({
 
 var ReviewsModel = mongoose.model('Reviews', listingSchema);
 
-function findAll(callback) {
-  ReviewsModel.find({}, callback);
+function find(id, callback) {
+  ReviewsModel.find({listing_id: id}, callback);
 }
 
 function insertOne(listing, callback) {
@@ -34,4 +34,4 @@ function insertOne(listing, callback) {
 
 
 exports.insertOne = insertOne;
-exports.findAll = findAll;
+exports.find = find;
