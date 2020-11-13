@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrsf131-3-group/image-carousel-service.git
+  - https://github.com/hrsf131-3-group/reservations-service.git
+  - https://github.com/hrsf131-3-group/reviews-service.git
+  - https://github.com/hrsf131-3-group/more-places-service.git
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## Usage
 
-> Some usage instructions
+> Run the "seed-db" command with npm run to generate data and store it in database
 
 ## Requirements
 
