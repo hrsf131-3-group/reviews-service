@@ -1,56 +1,37 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
+const Reviews = require('./db/connection.js');
 
 mongoose.connect('mongodb://localhost/listingReviews');
-
-const listingSchema = mongoose.Schema({
-  listing_id: Number,
-  reviews: [{
-    image: String,
-    name: String,
-    review_year: Number,
-    review_month: String,
-    review_body: String
-  }],
-  ratings: {
-    cleanliness: Number,
-    communication: Number,
-    checkIn: Number,
-    accuracy: Number,
-    location: Number,
-    value: Number,
-    average: Number
-  }
-});
-
-var ReviewsModel = mongoose.model('Reviews', listingSchema);
 
 /*** PLAN FOR REVIEWS AND RATINGS SEPARATED SORTED BY LISTING_ID ***/
 
 const generateListings = (numListings) => {
   for(var i = 1; i <= numListings; i++) {
-    const newListing = new ReviewsModel;
+    const newListing = {};
     newListing.listing_id = i;
     var numReviews = Math.floor(Math.random() * 10);
     if (numReviews === 0) {
-      newListing.save((err) => {
+      Reviews.insertOne(newListing, (err) => {
         if (err) {
-          console.log(err)
+          console.log(err);
         } else {
-          console.log('Added')
+          console.log('Added');
         }
       })
       continue;
     }
 
+    newListing.reviews = [];
+
     generateReviews(newListing, numReviews);
     generateRatings(newListing, numReviews);
 
-    newListing.save((err) => {
+    Reviews.insertOne(newListing, (err) => {
       if (err) {
-        console.log(err)
+        console.log(err);
       } else {
-        console.log('Added')
+        console.log('Added');
       }
     })
   }
@@ -104,6 +85,5 @@ const generateRatings = (listing, numReviews) => {
     average: Math.round((average / numReviews) * 10) / 10,
   }
 }
-
 
 generateListings(100);
