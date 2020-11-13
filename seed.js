@@ -10,7 +10,7 @@ const generateListings = (numListings) => {
   for(var i = 1; i <= numListings; i++) {
     const newListing = {};
     newListing.listing_id = i;
-    var numReviews = Math.floor(Math.random() * 10);
+    var numReviews = Math.floor(Math.random() * (10 - 1) + 1);
     if (numReviews === 0) {
       Reviews.create(newListing, (err) => {
         if (err) {
@@ -93,4 +93,11 @@ const generateRatings = (listing, numReviews) => {
   }
 }
 
+Reviews.removeAll((err) => {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log('removed')
+  }
+});
 generateListings(100);

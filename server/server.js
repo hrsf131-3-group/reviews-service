@@ -1,10 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 const db = require('../db/connection.js');
 const app = express();
 const port = 3000;
-const bodyParser = require('body-parser')
 
-
+const pathName = path.join(__dirname, '../client/dist')
+app.use(express.static(pathName))
 app.use(bodyParser.json());
 
 app.get('/api/homes/:id/reviews', (req, res) => {
