@@ -66,12 +66,13 @@ const generateRatings = (listing, numReviews) => {
     var locTemp = Math.floor(Math.random() * (6 - 3) + 3);
     var valTemp = Math.floor(Math.random() * (6 - 3) + 3);
 
-    // listing.reviews[i].cleanliness = cleanTemp;
-    // listing.reviews[i].communication = commTemp;
-    // listing.reviews[i].checkIn = checkTemp;
-    // listing.reviews[i].accuracy = accTemp;
-    // listing.reviews[i].location = locTemp;
-    // listing.reviews[i].value = valTemp;
+    // used to calculate new average when new review is posted
+    listing.reviews[i].cleanliness = cleanTemp;
+    listing.reviews[i].communication = commTemp;
+    listing.reviews[i].checkIn = checkTemp;
+    listing.reviews[i].accuracy = accTemp;
+    listing.reviews[i].location = locTemp;
+    listing.reviews[i].value = valTemp;
 
     cleanliness += cleanTemp;
     communication += commTemp;
