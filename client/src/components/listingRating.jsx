@@ -1,9 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const Rating = styled.div`padding: 10px; background: papayawhip;`;
 const ListingRating = (props) => (
   <div>
-    {props.average}
-    ({props.numReviews} Reviews)
+    <Rating>
+      {props.average} ({props.numReviews} Reviews)
+    </Rating>
   </div>
 )
 
