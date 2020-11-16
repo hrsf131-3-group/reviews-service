@@ -20,6 +20,8 @@ const Rating = styled.span`
       background-color: black;
     }
     float: right;
+    // margin-right: 50px;
+    // justify-content: right;
   },
 
 `;

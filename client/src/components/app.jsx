@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/homes/28/reviews')
+    axios.get('/api/homes/67/reviews')
     .then((response) => {
       var ratings = response.data[0].ratings;
       var average = ratings.average;
