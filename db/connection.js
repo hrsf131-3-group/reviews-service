@@ -18,13 +18,13 @@ const listingSchema = mongoose.Schema({
     value: Number
   }],
   ratings: {
-    cleanliness: Number,
-    communication: Number,
-    checkIn: Number,
-    accuracy: Number,
-    location: Number,
-    value: Number,
-    average: Number
+    cleanliness: String,
+    communication: String,
+    checkIn: String,
+    accuracy: String,
+    location: String,
+    value: String,
+    average: String
   }
 });
 
@@ -70,13 +70,13 @@ function updateRating(id, callback) {
       average += Math.round(((currList.cleanliness + currList.communication + currList.checkIn + currList.accuracy + currList.location + currList.value) / 6) *10) / 10;
     }
 
-    listing.ratings.cleanliness = Math.round((cleanliness / listing.reviews.length) * 10) / 10;
-    listing.ratings.communication = Math.round((communication / listing.reviews.length) * 10) / 10;
-    listing.ratings.checkIn = Math.round((checkIn / listing.reviews.length) * 10) / 10;
-    listing.ratings.accuracy = Math.round((accuracy / listing.reviews.length) * 10) / 10;
-    listing.ratings.location = Math.round((location / listing.reviews.length) * 10) / 10;
-    listing.ratings.value = Math.round((value / listing.reviews.length) * 10) / 10;
-    listing.ratings.average = Math.round((average / listing.reviews.length) * 10) / 10;
+    listing.ratings.cleanliness = (Math.round((cleanliness / listing.reviews.length) * 10) / 10).toFixed(1);
+    listing.ratings.communication = (Math.round((communication / listing.reviews.length) * 10) / 10).toFixed(1);
+    listing.ratings.checkIn = (Math.round((checkIn / listing.reviews.length) * 10) / 10).toFixed(1);
+    listing.ratings.accuracy = (Math.round((accuracy / listing.reviews.length) * 10) / 10).toFixed(1);
+    listing.ratings.location = (Math.round((location / listing.reviews.length) * 10) / 10).toFixed(1);
+    listing.ratings.value = (Math.round((value / listing.reviews.length) * 10) / 10).toFixed(1);
+    listing.ratings.average = (Math.round((average / listing.reviews.length) * 10) / 10).toFixed(1);
 
     listing.save()
     .then(() => {

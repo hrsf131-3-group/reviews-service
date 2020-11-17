@@ -2,30 +2,35 @@ import React from 'react';
 import axios from 'axios';
 import ListingRating from './listingRating.jsx';
 import Ratings from './ratings.jsx';
+import ListingReviews from './listingReviews.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listing: [],
       average: '',
       numReviews: '',
-      ratings: {}
+      ratings: {},
+      reviews: [],
+      hasReviews: false
     }
   }
 
   componentDidMount() {
-    axios.get('/api/homes/67/reviews')
+    axios.get('/api/homes/1/reviews')
     .then((response) => {
+      // console.log(response.data[0].reviews)
       var ratings = response.data[0].ratings;
       var average = ratings.average;
       delete ratings.average;
       this.setState({
-        listing: response.data,
         average: average,
         ratings: ratings,
-        numReviews: response.data[0].reviews.length
+        numReviews: response.data[0].reviews.length,
+        reviews: response.data[0].reviews,
+        hasReviews: true
       })
+      // console.log(this.state.reviews)
     })
     .catch((err) => {
       console.log(err);
@@ -34,10 +39,21 @@ class App extends React.Component {
 
 
   render() {
+    const hasReviews = this.state.hasReviews;
+    let reviews;
+    if (hasReviews) {
+      reviews = <ListingReviews reviews={this.state.reviews}/>;
+    }
     return(
       <div>
         <ListingRating average={this.state.average} numReviews={this.state.numReviews}/>
         <Ratings {...this.state.ratings}/>
+
+        {/* {this.state.reviews.map((review) => {
+          console.log(JSON.stringify(review)),
+          <ListingReviews review={JSON.stringify(review)}/>
+        })} */}
+        {reviews}
       </div>
     )
   }

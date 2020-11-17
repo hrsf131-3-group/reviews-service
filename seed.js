@@ -40,7 +40,7 @@ const generateListings = (numListings) => {
 const generateReviews = (listing, numReviews) => {
   for (var i = 0; i < numReviews; i++) {
     listing.reviews.push({
-      image: faker.image.imageUrl(),
+      image: 'https://loremflickr.com/320/240/abstract?random=' + i,
       name: faker.name.firstName(),
       review_month: faker.date.month(),
       review_year: Math.floor(Math.random() * (2020 - 2008) + 2008),
@@ -84,21 +84,14 @@ const generateRatings = (listing, numReviews) => {
     average += Math.round(((cleanTemp + commTemp + checkTemp + accTemp + locTemp + valTemp) / 6) *10) / 10;
   }
   listing.ratings = {
-    cleanliness: Math.round((cleanliness / numReviews) * 10) / 10,
-    communication: Math.round((communication / numReviews) * 10) / 10,
-    checkIn: Math.round((checkIn / numReviews) * 10) / 10,
-    accuracy: Math.round((accuracy / numReviews) * 10) / 10,
-    location: Math.round((location / numReviews) * 10) / 10,
-    value: Math.round((value / numReviews) * 10) / 10,
-    average: Math.round((average / numReviews) * 10) / 10,
+    cleanliness: (Math.round((cleanliness / numReviews) * 10) / 10).toFixed(1),
+    communication: (Math.round((communication / numReviews) * 10) / 10).toFixed(1),
+    checkIn: (Math.round((checkIn / numReviews) * 10) / 10).toFixed(1),
+    accuracy: (Math.round((accuracy / numReviews) * 10) / 10).toFixed(1),
+    location: (Math.round((location / numReviews) * 10) / 10).toFixed(1),
+    value: (Math.round((value / numReviews) * 10) / 10).toFixed(1),
+    average: (Math.round((average / numReviews) * 10) / 10).toFixed(1),
   }
 }
 
-Reviews.removeAll((err) => {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log('removed')
-  }
-});
 generateListings(100);
