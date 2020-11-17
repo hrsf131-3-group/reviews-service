@@ -43,7 +43,7 @@ class App extends React.Component {
     const hasReviews = this.state.hasReviews;
     let reviews;
     if (hasReviews) {
-      reviews = <ListingReviews reviews={this.state.reviews}/>;
+      reviews = <ListingReviews numReviews={this.state.numReviews} average={this.state.average} ratings={this.state.ratings} reviews={this.state.reviews}/>;
     }
     return(
       <div>

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
+import ModalRatings from './modalRatings.jsx';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -49,7 +50,7 @@ const ModalExit = styled.div`
 `;
 
 
-const ReviewModal = ({isClicked, toggle}) => isClicked ? ReactDOM.createPortal (
+const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle}) => isClicked ? ReactDOM.createPortal (
   <React.Fragment>
     <ModalOverlay></ModalOverlay>
     <ModalWrap>
@@ -58,8 +59,10 @@ const ReviewModal = ({isClicked, toggle}) => isClicked ? ReactDOM.createPortal (
           <button onClick={toggle}>&times;</button>
         </ModalExit>
         <Grid>
-          <Col sm={6}>sklafsl</Col>
-          <Col sm={6}>fsafsaf</Col>
+          <Row>
+            <Col xs={12} sm={12} lg={6}><ModalRatings numReviews={numReviews} average={average} ratings={ratings}/></Col>
+            <Col xs={12} sm={12} lg={6}>fsafsaf</Col>
+          </Row>
         </Grid>
 
       </ModalSquare>

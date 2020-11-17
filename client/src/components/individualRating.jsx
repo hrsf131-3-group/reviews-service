@@ -19,7 +19,7 @@ const Rating = styled.span`
       border-radius: 20px;
       background-color: black;
     }
-    float: right;
+    // float: right;
     padding-bottom: 35px;
     // margin-left: 100px;
     // justify-content: right;

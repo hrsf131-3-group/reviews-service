@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import IndividualReview from './individualReview.jsx';
-import Modal from './Modal.jsx';
+import Modal from './modal.jsx';
 
 const ListingReviews = (props) => {
   console.log('rev',props)
@@ -64,7 +64,7 @@ const ListingReviews = (props) => {
           {col6}
         </Row>
       </Grid>
-      <Modal reviews={mostRecent}/>
+      <Modal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={mostRecent}/>
     </div>
   )
 }
