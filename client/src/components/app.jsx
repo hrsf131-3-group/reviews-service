@@ -12,14 +12,15 @@ class App extends React.Component {
       numReviews: '',
       ratings: {},
       reviews: [],
-      hasReviews: false
+      hasReviews: false,
+      modalVisible: false
     }
   }
 
   componentDidMount() {
     axios.get('/api/homes/1/reviews')
     .then((response) => {
-      // console.log(response.data[0].reviews)
+      // console.log('app',response.data[0].reviews)
       var ratings = response.data[0].ratings;
       var average = ratings.average;
       delete ratings.average;
@@ -30,7 +31,7 @@ class App extends React.Component {
         reviews: response.data[0].reviews,
         hasReviews: true
       })
-      // console.log(this.state.reviews)
+      // console.log('app',this.state.reviews)
     })
     .catch((err) => {
       console.log(err);
@@ -48,12 +49,8 @@ class App extends React.Component {
       <div>
         <ListingRating average={this.state.average} numReviews={this.state.numReviews}/>
         <Ratings {...this.state.ratings}/>
-
-        {/* {this.state.reviews.map((review) => {
-          console.log(JSON.stringify(review)),
-          <ListingReviews review={JSON.stringify(review)}/>
-        })} */}
         {reviews}
+
       </div>
     )
   }

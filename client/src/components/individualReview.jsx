@@ -21,25 +21,33 @@ const Date = styled.div`
 `;
 
 const Text = styled.div`
-position: relative;
+  position: relative;
+  // margin-right: 50px;
+`;
+
+const Reviews = styled.div`
+  padding-left: 65px;
+  padding-right: 65px;
 `;
 
 const IndividualReview = (props) => {
   return (
-  <div>
-    <Pic>
-      <img src={props.image} alt="Profile Picture" style={{width:50,  height:50, borderRadius: 400 / 2}}/>
-    </Pic>
-    <Name>
-      {props.name}
-    </Name>
-    <Date>
-      {props.review_month} {props.review_year}
-    </Date>
-    <Text>
-      {props.review_body}
-    </Text>
-  </div>
+    <div>
+      <Reviews>
+        <Pic>
+          <img src={props.image} alt="Profile Picture" style={{width:50,  height:50, borderRadius: 400 / 2}}/>
+        </Pic>
+        <Name>
+          {props.name}
+        </Name>
+        <Date>
+          {props.review_month} {props.review_year}
+        </Date>
+        <Text>
+          {props.review_body}
+        </Text>
+      </Reviews>
+    </div>
   )
 }
 
