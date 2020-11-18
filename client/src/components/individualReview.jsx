@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 
 const Pic = styled.div`
   margin-top: 25px;

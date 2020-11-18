@@ -1,7 +1,85 @@
 import React from 'react';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import IndividualReview from './individualReview.jsx';
+import styled from 'styled-components';
 import Modal from './modal.jsx';
+
+const Reviews = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Rev1 = styled.div`
+  max-width: 750px;
+  @media (min-width: 750px) {
+    max-width: 900px;
+  }
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
+`;
+
+const Rev2 = styled.div`
+  max-width: 750px;
+  @media (min-width: 750px) {
+    max-width: 900px;
+  }
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
+`;
+
+const Rev3 = styled.div`
+  max-width: 750px;
+  @media (min-width: 750px) {
+    max-width: 900px;
+  }
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
+`;
+
+const Rev4 = styled.div`
+  max-width: 750px;
+  @media (max-width: 750px) {
+    display: none;
+  }
+  @media (min-width: 750px) {
+    max-width: 900px;
+  }
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
+`;
+
+const Rev5 = styled.div`
+  max-width: 750px;
+  @media (max-width: 750px) {
+    display: none;
+  }
+  @media (min-width: 750px) {
+    max-width: 900px;
+  }
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
+`;
+
+const Rev6 = styled.div`
+  max-width: 750px;
+  @media (max-width: 750px) {
+    display: none;
+  }
+  @media (min-width: 750px) {
+    max-width: 900px;
+  }
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
+`;
+
+const Button = styled.div`
+
+`;
 
 const ListingReviews = (props) => {
   console.log('rev',props)
@@ -34,37 +112,49 @@ const ListingReviews = (props) => {
   let col6;
 
   if (mostRecent[0] !== undefined) {
-    col1 = <Col xs={12} sm={12} md={6}><IndividualReview {...mostRecent[0]}/></Col>
+    col1 = <IndividualReview {...mostRecent[0]}/>
   }
   if (mostRecent[1] !== undefined) {
-    col2 = <Col xs={12} sm={12} md={6}><IndividualReview {...mostRecent[1]}/></Col>
+    col2 = <IndividualReview {...mostRecent[1]}/>
   }
   if (mostRecent[2] !== undefined) {
-    col3 = <Col xs={12} sm={12} md={6}><IndividualReview {...mostRecent[2]}/></Col>
+    col3 = <IndividualReview {...mostRecent[2]}/>
   }
   if (mostRecent[3] !== undefined) {
-    col4 = <Col xs={false} sm={12} md={6}><IndividualReview {...mostRecent[3]}/></Col>
+    col4 = <IndividualReview {...mostRecent[3]}/>
   }
   if (mostRecent[4] !== undefined) {
-    col5 = <Col xs={false} sm={12} md={6}><IndividualReview {...mostRecent[4]}/></Col>
+    col5 = <IndividualReview {...mostRecent[4]}/>
   }
   if (mostRecent[5] !== undefined) {
-    col6 = <Col xs={false} sm={12} md={6}><IndividualReview {...mostRecent[5]}/></Col>
+    col6 = <IndividualReview {...mostRecent[5]}/>
   }
 
   return (
     <div>
-      <Grid>
-        <Row>
+      <Reviews>
+        <Rev1>
           {col1}
+        </Rev1>
+        <Rev2>
           {col2}
+        </Rev2>
+        <Rev3>
           {col3}
+        </Rev3>
+        <Rev4>
           {col4}
+        </Rev4>
+        <Rev5>
           {col5}
+        </Rev5>
+        <Rev6>
           {col6}
-        </Row>
-      </Grid>
-      <Modal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={mostRecent}/>
+        </Rev6>
+      </Reviews>
+      <Button>
+        <Modal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={mostRecent}/>
+      </Button>
     </div>
   )
 }

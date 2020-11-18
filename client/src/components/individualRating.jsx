@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 
-const Rating = styled.span`
+const Rating = styled.div`
   progress[value] {
     appearance: none;
     ::-webkit-progress-bar {
@@ -19,10 +18,10 @@ const Rating = styled.span`
       border-radius: 20px;
       background-color: black;
     }
-    // float: right;
+    // float: left;
     padding-bottom: 35px;
     // margin-left: 100px;
-    // justify-content: right;
+    justify-content: flex-start;
   },
 
 `;

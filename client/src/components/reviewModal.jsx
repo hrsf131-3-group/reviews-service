@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import ModalRatings from './modalRatings.jsx';
+import ModalReviews from './modalReviews.jsx';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -35,8 +35,15 @@ const ModalSquare = styled.div`
   margin-bottom: 5%;
   margin-right: 10%;
   margin-left: 10%;
-  border-radius: 3px;
+  border-radius: 10px;
   padding: 2rem;
+  @media (max-width: 750px) {
+    grid-template-columns: 30% 70%;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto;
+  }
 `;
 
 const ModalExit = styled.div`
@@ -45,8 +52,18 @@ const ModalExit = styled.div`
   line-height: 1;
   color: #000;
   opacity: .3;
-  cursor: pointer;
   border: none;
+  padding-bottom: 5px;
+`;
+
+const ModalGrid = styled.div`
+  display: grid;
+  max-height: 100%;
+  overflow: auto;
+  @media (min-width: 1000px) {
+    grid-template-columns: 30% 70%;
+    overflow: auto;
+  }
 `;
 
 
@@ -58,13 +75,10 @@ const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle})
         <ModalExit>
           <button onClick={toggle}>&times;</button>
         </ModalExit>
-        <Grid>
-          <Row>
-            <Col xs={12} sm={12} lg={6}><ModalRatings numReviews={numReviews} average={average} ratings={ratings}/></Col>
-            <Col xs={12} sm={12} lg={6}>fsafsaf</Col>
-          </Row>
-        </Grid>
-
+        <ModalGrid>
+          <ModalRatings numReviews={numReviews} average={average} ratings={ratings}/>
+          <ModalReviews reviews={reviews}/>
+        </ModalGrid>
       </ModalSquare>
     </ModalWrap>
   </React.Fragment>, document.body

@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/homes/1/reviews')
+    axios.get('/api/homes/100/reviews')
     .then((response) => {
       // console.log('app',response.data[0].reviews)
       var ratings = response.data[0].ratings;

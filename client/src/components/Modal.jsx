@@ -7,7 +7,6 @@ const ModalDiv = styled.div`
 `;
 
 const Modal = (props) => {
-  console.log('modal',props)
   const {isClicked, toggle} = useModal();
   return (
     <div>
