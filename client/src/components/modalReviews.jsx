@@ -8,6 +8,13 @@ const Review = styled.div`
   flex-wrap: wrap;
   padding-top: 15px;
   overflow: auto;
+  @media (max-width: 750px) {
+    display: grid;
+    grid-template-columns: 100%;
+    max-width: 80%;
+    height: 50%;
+    overflow: scroll;
+  }
   @media (min-width: 1000px) {
     grid-template-columns: 100%;
     height: 50%;
@@ -18,13 +25,15 @@ const Review = styled.div`
 const Search = styled.input`
   width: 100%;
   height: 40px;
-  margin-left: 65px;
+  // margin-left: 65px;
   padding: 15px 15px;
   border-radius: 50px;
   border: 1px solid rgba(192, 192, 192, .7);
   background-color: rgba(211, 211, 211, .2);
   outline: none;
-
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 `;
 
 

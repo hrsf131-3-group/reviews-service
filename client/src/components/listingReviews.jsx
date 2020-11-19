@@ -4,17 +4,22 @@ import styled from 'styled-components';
 import Modal from './modal.jsx';
 
 const Reviews = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  width: 80%;
+  max-width: 1200px;
+  padding-left: 65px;
+  @media (min-width: 1000px) {
+    grid-template-columns: 45% 10% 45%;
+  }
 `;
 
 const Rev1 = styled.div`
-  max-width: 750px;
   @media (min-width: 750px) {
     max-width: 900px;
   }
   @media (min-width: 1000px) {
-    max-width: 50%;
+    // max-width: 50%;
+    grid-column: 1
   }
 `;
 
@@ -24,7 +29,7 @@ const Rev2 = styled.div`
     max-width: 900px;
   }
   @media (min-width: 1000px) {
-    max-width: 50%;
+    grid-column: 3
   }
 `;
 
@@ -34,7 +39,7 @@ const Rev3 = styled.div`
     max-width: 900px;
   }
   @media (min-width: 1000px) {
-    max-width: 50%;
+    grid-column: 1
   }
 `;
 
@@ -47,7 +52,7 @@ const Rev4 = styled.div`
     max-width: 900px;
   }
   @media (min-width: 1000px) {
-    max-width: 50%;
+    grid-column: 3
   }
 `;
 
@@ -60,7 +65,7 @@ const Rev5 = styled.div`
     max-width: 900px;
   }
   @media (min-width: 1000px) {
-    max-width: 50%;
+    grid-column: 1
   }
 `;
 
@@ -73,37 +78,24 @@ const Rev6 = styled.div`
     max-width: 900px;
   }
   @media (min-width: 1000px) {
-    max-width: 50%;
+    grid-column: 3
   }
-`;
-
-const Button = styled.div`
-
 `;
 
 const ListingReviews = (props) => {
-  console.log('rev',props)
+  // console.log('rev',props)
   var data = props.reviews;
   var length = data.length
-  var mostRecent = [];
-  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  for (var i = 0; i < length; i++) {
-    var temp;
-    var max = 0;
-    var index;
-    for (var j = 0; j < data.length; j++) {
-      if (data[j].review_year > max) {
-        temp = data[j];
-        max = data[j].review_year;
-        index = j;
-      }
-    }
-    mostRecent.push(temp);
-    data.splice(index, 1);
-    temp = undefined;
-  }
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const sorter = (b, a) => {
+    if(a.review_year !== b.review_year){
+       return a.review_year - b.review_year;
+    }else{
+       return months.indexOf(a.review_month) - months.indexOf(b.review_month);
+    };
+  };
+  data.sort(sorter);
 
-  console.log(mostRecent)
   let col1;
   let col2;
   let col3;
@@ -111,23 +103,23 @@ const ListingReviews = (props) => {
   let col5;
   let col6;
 
-  if (mostRecent[0] !== undefined) {
-    col1 = <IndividualReview {...mostRecent[0]}/>
+  if (data[0] !== undefined) {
+    col1 = <IndividualReview {...data[0]}/>
   }
-  if (mostRecent[1] !== undefined) {
-    col2 = <IndividualReview {...mostRecent[1]}/>
+  if (data[1] !== undefined) {
+    col2 = <IndividualReview {...data[1]}/>
   }
-  if (mostRecent[2] !== undefined) {
-    col3 = <IndividualReview {...mostRecent[2]}/>
+  if (data[2] !== undefined) {
+    col3 = <IndividualReview {...data[2]}/>
   }
-  if (mostRecent[3] !== undefined) {
-    col4 = <IndividualReview {...mostRecent[3]}/>
+  if (data[3] !== undefined) {
+    col4 = <IndividualReview {...data[3]}/>
   }
-  if (mostRecent[4] !== undefined) {
-    col5 = <IndividualReview {...mostRecent[4]}/>
+  if (data[4] !== undefined) {
+    col5 = <IndividualReview {...data[4]}/>
   }
-  if (mostRecent[5] !== undefined) {
-    col6 = <IndividualReview {...mostRecent[5]}/>
+  if (data[5] !== undefined) {
+    col6 = <IndividualReview {...data[5]}/>
   }
 
   return (
@@ -152,9 +144,9 @@ const ListingReviews = (props) => {
           {col6}
         </Rev6>
       </Reviews>
-      <Button>
-        <Modal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={mostRecent}/>
-      </Button>
+      <div>
+        <Modal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={data}/>
+      </div>
     </div>
   )
 }

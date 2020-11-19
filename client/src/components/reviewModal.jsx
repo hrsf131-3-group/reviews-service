@@ -38,11 +38,11 @@ const ModalSquare = styled.div`
   border-radius: 10px;
   padding: 2rem;
   @media (max-width: 750px) {
-    grid-template-columns: 30% 70%;
     height: 100%;
     width: 100%;
     margin: 0 auto;
     overflow: auto;
+    border-radius: 0px;
   }
 `;
 
@@ -61,8 +61,21 @@ const ModalGrid = styled.div`
   max-height: 100%;
   overflow: auto;
   @media (min-width: 1000px) {
-    grid-template-columns: 30% 70%;
-    overflow: auto;
+    grid-template-columns: 40% 60%;
+    // overflow: auto;
+  }
+`;
+
+const Ratings = styled.div`
+  // overflow: auto;
+  @media (min-width: 1000px) {
+    // position: fixed;
+  }
+`;
+
+const Reviews = styled.div`
+  @media (min-width: 1000px) {
+    grid-column: 2;
   }
 `;
 
@@ -76,8 +89,13 @@ const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle})
           <button onClick={toggle}>&times;</button>
         </ModalExit>
         <ModalGrid>
-          <ModalRatings numReviews={numReviews} average={average} ratings={ratings}/>
-          <ModalReviews reviews={reviews}/>
+          <Ratings>
+            <ModalRatings numReviews={numReviews} average={average} ratings={ratings}/>
+
+          </Ratings>
+          <Reviews>
+            <ModalReviews reviews={reviews}/>
+          </Reviews>
         </ModalGrid>
       </ModalSquare>
     </ModalWrap>

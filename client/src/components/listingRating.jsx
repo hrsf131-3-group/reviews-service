@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Rating = styled.div`
-  padding-left: 95px;
+  padding-left: 65px;
   margin-bottom: 15px;
 `;
 const Star = styled.span`

@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Rating = styled.div`
+const Rating = styled.span`
   progress[value] {
     appearance: none;
     ::-webkit-progress-bar {
       margin-top: 7px;
-      margin-left: 25%;
-      width: 75%;
+      // margin-left: 25%;
+      width: 100%;
       height: 4px;
       border-radius: 20px;
       background-color: #eee;
@@ -18,10 +18,7 @@ const Rating = styled.div`
       border-radius: 20px;
       background-color: black;
     }
-    // float: left;
-    padding-bottom: 35px;
-    // margin-left: 100px;
-    justify-content: flex-start;
+    padding-right: 10px;
   },
 
 `;

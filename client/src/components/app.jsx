@@ -3,6 +3,7 @@ import axios from 'axios';
 import ListingRating from './listingRating.jsx';
 import Ratings from './ratings.jsx';
 import ListingReviews from './listingReviews.jsx';
+import styled from 'styled-components';
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +39,6 @@ class App extends React.Component {
     })
   }
 
-
   render() {
     const hasReviews = this.state.hasReviews;
     let reviews;
@@ -50,7 +50,6 @@ class App extends React.Component {
         <ListingRating average={this.state.average} numReviews={this.state.numReviews}/>
         <Ratings {...this.state.ratings}/>
         {reviews}
-
       </div>
     )
   }
