@@ -19,6 +19,7 @@ const Date = styled.div`
   // float: left;
   position: relative;
   font-size: 14px;
+  color: rgb(113, 113, 113);
 `;
 
 const Text = styled.div`
@@ -27,10 +28,10 @@ const Text = styled.div`
   // white-space:nowrap;
   // overflow:hidden;
   // text-overflow: ellipsis;
-  // display: -webkit-box;
-  // -webkit-line-clamp: 3;
-  // -webkit-box-orient: vertical;
-  // overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 const Reviews = styled.div`
