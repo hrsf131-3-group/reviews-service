@@ -1,27 +1,19 @@
 import React from 'react';
 import {mount, shallow} from 'enzyme';
+import ListingRating from '../client/src/components/listingRating.jsx';
+import Ratings from '../client/src/components/ratings.jsx';
 
-function Fixture() {
-  return (
-    <div>
-      <input id="checked" defaultChecked />
-      <input id="not" defaultChecked={false} />
-      <input id="tertiary" defaultChecked checked={false} />
-    </div>
-  );
-}
 
-describe('<Fixture />', () => {
-  it('assert checked', () => {
-    const wrapper = mount(<Fixture />);
-    expect(wrapper.find('#checked')).toBeChecked();
-    expect(wrapper.find('#not')).not.toBeChecked();
+describe('<Ratings />', () => {
+  it('Checks if average ratings are rendered', () => {
+    const wrapper = shallow(<Ratings />);
+    expect(wrapper.containsAnyMatchingElements([
+      <span>Cleanliness</span>,
+      <span>Accuracy</span>,
+      <span>Communication</span>,
+      <span>Location</span>,
+      <span>Check-in</span>,
+      <span>Value</span>
+    ])).toEqual(true);
   });
 });
-
-// const wrapper = mount(<Fixture />); // mount/render/shallow when applicable
-
-
-
-// expect(wrapper.find('#checked')).toBeChecked();
-// expect(wrapper.find('#not')).not.toBeChecked();
