@@ -11,71 +11,73 @@ const Star = styled.div`
 
 const Star1 = styled.div`
   position: absolute;
-  transform: rotate(30deg);
+  // transform: rotate(30deg);
 `;
 
 const Triangle1 = styled.div`
   position: relative;
   background-color: #FF385C;
   text-align: left;
-  top: 8.25px;
-  left: 3px;
-  width: .5em;
-	height: .5em;
-  border-top-right-radius: 30%;
-  transform: rotate(-45deg);
+  top: 4px;
+  left: 6px;
+  // bottom: 2px;
+  width: 10px;
+	height: 10px;
+  border-top-right-radius: 20%;
+  transform: rotate(285deg);
 `;
 const Triangle1Before = styled.div`
   content: '';
   position: absolute;
   background-color: inherit;
-  width: .5em;
-	height: .5em;
-  border-top-right-radius: 30%;
+  width: 10px;
+	height: 10px;
+  border-top-right-radius: 20%;
   transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
 `;
 const Triangle1After = styled.div`
   content: '';
   position: absolute;
   background-color: inherit;
-  width: .5em;
-  height: .5em;
-  border-top-right-radius: 30%;
+  width: 10px;
+  height: 10px;
+  border-top-right-radius: 20%;
   transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
 `;
 const Star2 = styled.div`
   position: absolute;
-  transform: rotate(-15deg);
+  // transform: rotate(30deg);
 `;
 
 const Triangle2 = styled.div`
   position: relative;
   background-color: #FF385C;
   text-align: left;
-  top: 8.2px;
-  right: 4px;
-  // bottom: 1px;
-  width: .45em;
-	height: .5em;
-  border-top-right-radius: 30%;
-  transform: rotate(-60deg);
+  top: 4px;
+  left: 7px;
+  // right: 4px;
+  // bottom: 2px;
+  width: 10px;
+	height: 10px;
+  border-top-right-radius: 20%;
+  transform: rotate(-15deg);
 `;
 const Triangle2Before = styled.div`
   content: '';
   position: absolute;
   background-color: inherit;
-  width: .5em;
-	height: .5em;
-  border-top-right-radius: 30%;
+  width: 10px;
+	height: 10px;
+  border-top-right-radius: 20%;
   transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
 `;
 const Triangle2After = styled.div`
   content: '';
   position: absolute;
   background-color: inherit;
-  width: .5em;
-  height: .5em;
-  border-top-right-radius: 30%;
+  width: 10px;
+  height: 10px;
+  border-top-right-radius: 20%;
   transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
 `;
 
@@ -86,18 +88,20 @@ const Star3 = styled.div`
 
 const Triangle3 = styled.div`
   position: relative;
-  top: 5.5px;
-  right: 2px;
+  // top: 5.5px;
+  // bottom: 4px;
+  left: 6.5px;
   background-color: #FF385C;
   text-align: left;
-  width: .54em;
-	height: .55em;
-  border-top-right-radius: 30%;
+  width: 9px;
+	height: 9px;
+  border-top-right-radius: 20%;
   transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
 `;
 
 const Average = styled.div`
-  padding-left: 25px;
+  padding-left: 35px;
+  padding-bottom: 10px;
   font-size: 22;
   color: #222222;
   font-family: Helvetica, Arial, Sans-Serif;

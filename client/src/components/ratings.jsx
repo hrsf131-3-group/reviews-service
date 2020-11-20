@@ -7,7 +7,7 @@ const AvgRatings = styled.div`
   padding-left: 65px;
   display: grid;
   overflow: auto;
-  width: 90%;
+  width: 80%;
   max-width: 1200px;
   flex-flow: column wrap;
   color: #222222;
@@ -18,7 +18,7 @@ const AvgRatings = styled.div`
     display: none;
   }
   @media (min-width: 750px) {
-    grid-template-columns: 20% 20% 10% 20% 20% 10%;
+    grid-template-columns: 20% 20% 15% 20% 20% 5%;
     height: 15%;
   }
 `;

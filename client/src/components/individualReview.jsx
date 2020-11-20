@@ -28,10 +28,10 @@ const Text = styled.div`
   // white-space:nowrap;
   // overflow:hidden;
   // text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  // display: -webkit-box;
+  // -webkit-line-clamp: 3;
+  // -webkit-box-orient: vertical;
+  // overflow: hidden;
 `;
 
 const Reviews = styled.div`
@@ -41,6 +41,32 @@ const Reviews = styled.div`
   font-family: Helvetica, Arial, Sans-Serif;
   font-weight: 200;
   font-size: 16px;
+`;
+
+const Trunk = styled.span`
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
+const Checkbox = styled.input`
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  ${Checkbox}:checked + span {
+    -webkit-line-clamp: unset;
+  }
+  ${Checkbox}:focus ~ button {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+  ${Checkbox}:checked ~ button {
+    display: none;
+  }
+`;
+
+const More = styled.label`
+
 `;
 
 const IndividualReview = (props) => {
@@ -57,7 +83,11 @@ const IndividualReview = (props) => {
           {props.review_month} {props.review_year}
         </Date>
         <Text>
-          {props.review_body}
+          <Checkbox type="checkbox" id={props._id}/>
+          <Trunk>
+            {props.review_body}
+          </Trunk>
+          <More htmlFor={props._id} role="button" onClick={console.log('fjslk')}>read more</More>
         </Text>
       </Reviews>
     </div>
