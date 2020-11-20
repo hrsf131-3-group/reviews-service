@@ -66,7 +66,11 @@ const Checkbox = styled.input`
 `;
 
 const More = styled.label`
-
+  font-weight: 600;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const IndividualReview = (props) => {
