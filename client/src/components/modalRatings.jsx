@@ -115,7 +115,9 @@ const Average = styled.span`
 `;
 
 const Star = styled.div`
+  padding-left: 13px;
   margin-top: 25px;
+  position: relative;
 `;
 
 const Star1 = styled.div`
@@ -207,7 +209,8 @@ const Triangle3 = styled.div`
 `;
 
 const NumReviews = styled.div`
-  padding-left: 25px;
+  padding-left: 40px;
+  padding-top: 4px;
   font-size: 22;
   color: #222222;
   font-family: Helvetica, Arial, Sans-Serif;

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import ModalRatings from './modalRatings.jsx';
 import ModalReviews from './modalReviews.jsx';
+import {keyframes} from 'styled-components';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -25,6 +26,16 @@ const ModalWrap = styled.div`
   outline: 0;
 `;
 
+const TransitionOpen = keyframes`
+  0% {top: 100%; opacity: 0;}
+  100% {top: 0; opacity 1}
+`;
+
+const TransitionClose = keyframes`
+  100% {top: 100%; opacity: 1;}
+  0% {top: 0; opacity 0}
+`;
+
 const ModalSquare = styled.div`
   z-index: 100;
   background: white;
@@ -37,12 +48,21 @@ const ModalSquare = styled.div`
   margin-left: 10%;
   border-radius: 10px;
   padding: 2rem;
+  overflow: hidden;
+  // animation: ${TransitionOpen} .4s;
   @media (max-width: 750px) {
     height: 100%;
     width: 100%;
     margin: 0 auto;
     overflow: auto;
     border-radius: 0px;
+    animation: ${TransitionOpen} .4s;
+    // animation-direction: reverse;
+    // animation-fill-mode: backwards;
+  }
+
+  @media (min-width: 1000px) {
+    animation: ${TransitionOpen} .4s;
   }
 `;
 
@@ -51,7 +71,7 @@ const ModalExit = styled.div`
   font-weight: 700;
   line-height: 1;
   color: #000;
-  opacity: .3;
+  opacity: 1;
   border: none;
   padding-bottom: 5px;
 `;
@@ -79,14 +99,26 @@ const Reviews = styled.div`
   }
 `;
 
+const Button = styled.button`
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  font-size: 25px;
+  outline: none;
+  text-decoration: bold;
+  &:hover {
+    cursor: pointer;
+    background-color: #F5F5F5;
+  }
+`;
 
-const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle}) => isClicked ? ReactDOM.createPortal (
+const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle, transition}) => isClicked ? ReactDOM.createPortal (
   <React.Fragment>
     <ModalOverlay></ModalOverlay>
     <ModalWrap>
-      <ModalSquare>
+      <ModalSquare className={transition}>
         <ModalExit>
-          <button onClick={toggle}>&times;</button>
+          <Button onClick={toggle}>&times;</Button>
         </ModalExit>
         <ModalGrid>
           <Ratings>

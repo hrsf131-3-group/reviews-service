@@ -24,11 +24,12 @@ const Button = styled.div`
 `;
 
 const Modal = (props) => {
-  const {isClicked, toggle} = useModal();
+  const {isClicked, toggle, transition} = useModal();
+
   return (
     <div>
       <Button onClick={toggle}>Show all {props.numReviews} Reviews</Button>
-      <ReviewModal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={props.reviews} isClicked={isClicked} toggle={toggle}/>
+      <ReviewModal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={props.reviews} isClicked={isClicked} toggle={toggle} transition={transition}/>
     </div>
   )
 }

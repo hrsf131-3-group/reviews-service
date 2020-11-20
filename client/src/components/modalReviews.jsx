@@ -57,10 +57,17 @@ const ModalReviews = (props) => {
   for (var i = 0; i < searchResult.length; i++) {
     reviewList.push(<IndividualReview key={i} {...searchResult[i]}/>)
   }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
+
   return (
     <div>
       <Review>
-        <Search type="text" placeholder="Search reviews" value={searchValue} onChange={handleChange}></Search>
+        <form onSubmit={handleSubmit}>
+          <Search type="text" placeholder="Search reviews" value={searchValue} onChange={handleChange}></Search>
+        </form>
         {reviewList}
       </Review>
     </div>
