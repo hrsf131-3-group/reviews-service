@@ -11,7 +11,7 @@ const AvgRatings = styled.div`
   max-width: 1200px;
   flex-flow: column wrap;
   color: #222222;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 200;
   font-size: 16px;
   @media (max-width: 750px) {

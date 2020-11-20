@@ -104,7 +104,7 @@ const Average = styled.div`
   padding-bottom: 10px;
   font-size: 22;
   color: #222222;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 200;
 `;
 const ListingRating = (props) => (

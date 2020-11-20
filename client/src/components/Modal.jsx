@@ -15,7 +15,7 @@ const Button = styled.div`
   text-align: center;
   cursor: pointer;
   color: #222222;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 16px;
   @media (max-width: 750px) {

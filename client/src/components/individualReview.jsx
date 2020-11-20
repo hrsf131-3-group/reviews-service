@@ -38,7 +38,7 @@ const Reviews = styled.div`
   // padding-left: 65px;
   // padding-right: 65px;
   color: #222222;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 200;
   font-size: 16px;
 `;
