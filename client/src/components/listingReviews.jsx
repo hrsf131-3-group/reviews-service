@@ -5,12 +5,16 @@ import Modal from './modal.jsx';
 
 const Reviews = styled.div`
   display: grid;
-  width: 80%;
+  width: 90%;
+  margin: auto;
   max-width: 1200px;
-  padding-left: 65px;
   @media (min-width: 1000px) {
     grid-template-columns: 45% 10% 45%;
   }
+`;
+
+const ModalDiv = styled.div`
+  padding-top: 30px;
 `;
 
 const Rev1 = styled.div`
@@ -143,10 +147,10 @@ const ListingReviews = (props) => {
         <Rev6>
           {col6}
         </Rev6>
+        <ModalDiv>
+          <Modal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={data}/>
+        </ModalDiv>
       </Reviews>
-      <div>
-        <Modal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={data}/>
-      </div>
     </div>
   )
 }

@@ -7,10 +7,9 @@ const Button = styled.div`
   border-radius: 10px;
   border: 1px solid;
   width: 200px;
-  // background: red;
   height: 35px;
-  margin-top: 35px;
-  margin-left: 65px;
+  margin: auto;
+  float: left;
   padding-top: 17px;
   text-align: center;
   cursor: pointer;
@@ -19,7 +18,8 @@ const Button = styled.div`
   font-weight: 400;
   font-size: 16px;
   @media (max-width: 750px) {
-    width: 80%;
+    width: 100%;
+    margin: auto;
   }
 `;
 

@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 
 const AvgRatings = styled.div`
-  padding-left: 65px;
+  margin: auto;
   display: grid;
   overflow: auto;
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
   flex-flow: column wrap;
   color: #222222;
+  overflow: hidden;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 200;
   font-size: 16px;
