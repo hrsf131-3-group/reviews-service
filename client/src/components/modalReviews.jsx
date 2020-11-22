@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Review = styled.div`
   display: flex;
-  max-width: 100%;
+  // max-width: 100%;
   flex-wrap: wrap;
   padding-top: 15px;
   overflow: auto;
@@ -13,7 +13,7 @@ const Review = styled.div`
     grid-template-columns: 100%;
     max-width: 80%;
     height: 50%;
-    overflow: scroll;
+    overflow: hidden;
   }
   @media (min-width: 1000px) {
     grid-template-columns: 100%;
@@ -32,7 +32,7 @@ const Search = styled.input`
   background-color: rgba(211, 211, 211, .2);
   outline: none;
   @media (max-width: 750px) {
-    width: 100%;
+    width: 95%;
   }
 `;
 
@@ -47,7 +47,7 @@ const Icon = styled.svg`
   stroke-width: 2;
   overflow: visible;
   position: relative;
-  top: 28px;
+  top: 29px;
   left: 15px;
 `;
 
