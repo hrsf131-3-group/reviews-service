@@ -80,6 +80,10 @@ const ModalGrid = styled.div`
   display: grid;
   max-height: 100%;
   overflow: auto;
+  @media (min-width: 750px) {
+    grid-template-columns: 100%;
+    // overflow: auto;
+  }
   @media (min-width: 1000px) {
     grid-template-columns: 40% 60%;
     // overflow: auto;

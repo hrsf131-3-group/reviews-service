@@ -43,6 +43,7 @@ const Reviews = styled.div`
   font-size: 16px;
 `;
 
+// somehow check if it has overflow || if over three lines
 const Trunk = styled.span`
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -57,10 +58,10 @@ const Checkbox = styled.input`
   ${Checkbox}:checked + span {
     -webkit-line-clamp: unset;
   }
-  ${Checkbox}:focus ~ button {
-    outline: -webkit-focus-ring-color auto 5px;
-  }
-  ${Checkbox}:checked ~ button {
+  // ${Checkbox}:focus ~ label {
+  //   outline: -webkit-focus-ring-color auto 5px;
+  // }
+  ${Checkbox}:checked ~ label {
     display: none;
   }
 `;
@@ -74,6 +75,13 @@ const More = styled.label`
 `;
 
 const IndividualReview = (props) => {
+  // set state for button?
+    // if text has overflow dont show
+  var noSpaceLength = props.review_body.split(' ').join('').length;
+  let readMoreButton;
+  if (noSpaceLength > 150) {
+    readMoreButton = <More htmlFor={props.modalId || props._id} role="button">read more</More>
+  }
   return (
     <div>
       <Reviews>
@@ -87,11 +95,11 @@ const IndividualReview = (props) => {
           {props.review_month} {props.review_year}
         </Date>
         <Text>
-          <Checkbox type="checkbox" id={props._id}/>
+          <Checkbox type="checkbox" id={props.modalId || props._id}/>
           <Trunk>
             {props.review_body}
           </Trunk>
-          <More htmlFor={props._id} role="button" onClick={console.log('fjslk')}>read more</More>
+          {readMoreButton}
         </Text>
       </Reviews>
     </div>

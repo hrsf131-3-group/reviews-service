@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 const Review = styled.div`
   display: flex;
-  // max-width: 100%;
+  max-width: 100%;
   flex-wrap: wrap;
   padding-top: 15px;
   overflow: auto;
   @media (max-width: 750px) {
     display: grid;
     grid-template-columns: 100%;
-    max-width: 80%;
+    max-width: 90%;
     height: 50%;
     overflow: hidden;
   }
@@ -67,9 +67,11 @@ const ModalReviews = (props) => {
     }
   }, [searchValue]);
 
+  // add an id field
   var reviewList = [];
   for (var i = 0; i < searchResult.length; i++) {
-    reviewList.push(<IndividualReview key={i} {...searchResult[i]}/>)
+    var index = i + 1;
+    reviewList.push(<IndividualReview key={index} modalId={index} {...searchResult[i]}/>)
   }
 
   const handleSubmit = (event) => {
