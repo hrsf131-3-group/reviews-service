@@ -67,7 +67,7 @@ const Checkbox = styled.input`
 `;
 
 const More = styled.label`
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: underline;
   &:hover {
     cursor: pointer;
