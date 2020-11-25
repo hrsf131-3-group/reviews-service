@@ -71,11 +71,7 @@ const ModalReviews = (props) => {
   var reviewList = [];
   for (var i = 0; i < searchResult.length; i++) {
     var index = i + 1;
-    reviewList.push(<IndividualReview key={index} modalId={index} {...searchResult[i]}/>)
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
+    reviewList.push(<IndividualReview key={index} search={searchValue} modalId={index} {...searchResult[i]}/>)
   }
 
   return (

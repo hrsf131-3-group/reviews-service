@@ -31,10 +31,10 @@ const TransitionOpen = keyframes`
   100% {top: 0; opacity 1}
 `;
 
-const TransitionClose = keyframes`
-  100% {top: 100%; opacity: 1;}
-  0% {top: 0; opacity 0}
-`;
+// const TransitionClose = keyframes`
+//   100% {top: 100%; opacity: 1;}
+//   0% {top: 0; opacity 0}
+// `;
 
 const ModalSquare = styled.div`
   z-index: 100;
@@ -49,20 +49,16 @@ const ModalSquare = styled.div`
   border-radius: 10px;
   padding: 2rem;
   overflow: hidden;
-  // animation: ${TransitionOpen} .4s;
+  animation: ${TransitionOpen} .4s;
+  animation-direction: ${isClicked => isClicked ? 'normal' : 'reverse'};
   @media (max-width: 750px) {
     height: 100%;
     width: 100%;
     margin: 0 auto;
     overflow: auto;
     border-radius: 0px;
-    animation: ${TransitionOpen} .4s;
     // animation-direction: reverse;
     // animation-fill-mode: backwards;
-  }
-
-  @media (min-width: 1000px) {
-    animation: ${TransitionOpen} .4s;
   }
 `;
 
@@ -116,11 +112,11 @@ const Button = styled.button`
   }
 `;
 
-const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle, transition}) => isClicked ? ReactDOM.createPortal (
+const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle}) => isClicked ? ReactDOM.createPortal (
   <React.Fragment>
     <ModalOverlay></ModalOverlay>
     <ModalWrap>
-      <ModalSquare className={transition}>
+      <ModalSquare>
         <ModalExit>
           <Button onClick={toggle}>&times;</Button>
         </ModalExit>

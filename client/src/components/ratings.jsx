@@ -27,7 +27,7 @@ const AvgRatings = styled.div`
 const Col2 = styled.div`
   grid-column-start: 2;
   justify-self: end;
-  margin: auto;
+  // margin: auto;
 `;
 
 const Col5 = styled.div`

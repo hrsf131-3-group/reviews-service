@@ -29,7 +29,7 @@ const Modal = (props) => {
   return (
     <div>
       <Button onClick={toggle}>Show all {props.numReviews} Reviews</Button>
-      <ReviewModal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={props.reviews} isClicked={isClicked} toggle={toggle} transition={transition}/>
+      <ReviewModal numReviews={props.numReviews} average={props.average} ratings={props.ratings} reviews={props.reviews} isClicked={isClicked} toggle={toggle}/>
     </div>
   )
 }
