@@ -1,5 +1,4 @@
 module.exports = {
-  mode: 'production',
   entry: __dirname + '/client/src/index.jsx',
   output: {
     filename: 'bundle.js',
