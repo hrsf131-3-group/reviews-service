@@ -10,7 +10,7 @@
   "scripts": {
     "seed-db": "node seed.js",
     "start": "nodemon server/server.js",
-    "react-dev": "webpack -p --watch",
+    "react-dev": "webpack --watch",
     "test": "jest"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     "styled-components": "^5.2.1",
     "superagent": "^6.1.0",
     "supertest": "^6.0.1",
-    "webpack": "^2.2.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0"
   }
 }
