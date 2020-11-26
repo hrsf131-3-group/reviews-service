@@ -7,7 +7,7 @@ const AvgRatings = styled.div`
   margin: auto;
   display: grid;
   overflow: auto;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   flex-flow: column wrap;
   color: #222222;
@@ -26,13 +26,13 @@ const AvgRatings = styled.div`
 
 const Col2 = styled.div`
   grid-column-start: 2;
-  justify-self: end;
-  // margin: auto;
+  justify-self: stretch;
+  // float: right;
 `;
 
 const Col5 = styled.div`
   grid-column-start: 5;
-  justify-self: end;
+  justify-self: stretch;
 `;
 
 const Col1 = styled.div`

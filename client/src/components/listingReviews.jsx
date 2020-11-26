@@ -5,7 +5,7 @@ import Modal from './modal.jsx';
 
 const Reviews = styled.div`
   display: grid;
-  width: 90%;
+  width: 100%;
   margin: auto;
   max-width: 1200px;
   @media (min-width: 1000px) {

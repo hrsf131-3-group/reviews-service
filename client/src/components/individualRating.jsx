@@ -7,7 +7,7 @@ const Rating = styled.span`
     ::-webkit-progress-bar {
       margin-top: 7px;
       // margin-left: 25%;
-      width: 100%;
+      width: 60%;
       height: 4px;
       border-radius: 20px;
       background-color: #eee;
@@ -18,7 +18,7 @@ const Rating = styled.span`
       border-radius: 20px;
       background-color: black;
     }
-    padding-right: 10px;
+    // padding-right: 10px;
   },
 
 `;
