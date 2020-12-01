@@ -32,7 +32,7 @@ const Search = styled.input`
   background-color: rgba(211, 211, 211, .2);
   outline: none;
   @media (max-width: 850px) {
-    width: 95%;
+    width: 90%;
   }
   &:focus {
     border: 2px solid;
