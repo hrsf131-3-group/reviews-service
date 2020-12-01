@@ -31,13 +31,8 @@ const TransitionOpen = keyframes`
   100% {top: 0; opacity 1}
 `;
 
-// const TransitionClose = keyframes`
-//   100% {top: 100%; opacity: 1;}
-//   0% {top: 0; opacity 0}
-// `;
-
 const ModalSquare = styled.div`
-  z-index: 100;
+  z-index: 1060;
   background: white;
   height: 75%;
   width: 75%;
@@ -74,7 +69,7 @@ const ModalExit = styled.div`
 
 const ModalGrid = styled.div`
   display: grid;
-  max-height: 100%;
+  max-height: 95%;
   overflow: auto;
   @media (min-width: 750px) {
     grid-template-columns: 100%;
@@ -114,8 +109,8 @@ const Button = styled.button`
 
 const ReviewModal = ({numReviews, average, ratings, reviews, isClicked, toggle}) => isClicked ? ReactDOM.createPortal (
   <React.Fragment>
-    <ModalOverlay></ModalOverlay>
     <ModalWrap>
+      <ModalOverlay onClick={toggle}></ModalOverlay>
       <ModalSquare>
         <ModalExit>
           <Button onClick={toggle}>&times;</Button>

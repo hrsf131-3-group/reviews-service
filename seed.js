@@ -10,7 +10,7 @@ const generateListings = (numListings) => {
   for(var i = 1; i <= numListings; i++) {
     const newListing = {};
     newListing.listing_id = i;
-    var numReviews = Math.floor(Math.random() * (10 - 1) + 1);
+    var numReviews = Math.floor(Math.random() * (20 - 3) + 3);
     if (numReviews === 0) {
       Reviews.create(newListing, (err) => {
         if (err) {

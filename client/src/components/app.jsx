@@ -19,9 +19,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/homes/100/reviews')
+    var rand = Math.floor(Math.random() * (100 - 1) + 1);
+    axios.get(`/api/homes/${rand}/reviews`)
     .then((response) => {
-      // console.log('app',response.data[0].reviews)
       var ratings = response.data[0].ratings;
       var average = ratings.average;
       delete ratings.average;
@@ -32,7 +32,6 @@ class App extends React.Component {
         reviews: response.data[0].reviews,
         hasReviews: true
       })
-      // console.log('app',this.state.reviews)
     })
     .catch((err) => {
       console.log(err);

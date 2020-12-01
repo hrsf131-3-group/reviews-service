@@ -7,7 +7,7 @@ const Rating = styled.span`
     ::-webkit-progress-bar {
       margin-top: 7px;
       // margin-left: 25%;
-      width: 60%;
+      width: 90%;
       height: 4px;
       border-radius: 20px;
       background-color: #eee;

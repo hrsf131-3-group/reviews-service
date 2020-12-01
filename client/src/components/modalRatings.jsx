@@ -4,12 +4,12 @@ import IndividualRating from './individualRating.jsx';
 
 const AllRatings = styled.div`
   max-width: 100%;
-  font-size: 14;
   display: grid;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 14px;
+  row-gap: 10px;
   @media (min-width: 0px) {
     grid-template-columns: 40% 40% 20%;
   }
@@ -102,8 +102,8 @@ const Col6 = styled.div`
 `;
 
 const SvgStar = styled.svg`
-  height: 17px;
-  width: 17px;
+  height: 25px;
+  width: 25px;
   fill: currentcolor;
   color: #FF385C;
 `;
@@ -115,11 +115,11 @@ const Average = styled.span`
 
 const Rating = styled.div`
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 20;
-  margin: auto;
+  // margin: auto;
   @media (min-width: 1000px) {
-    position: fixed;
+    position: absolute;
   }
 `;
 
@@ -132,7 +132,7 @@ const Star = styled.div`
 
 const NumReviews = styled.div`
   padding-left: 5px;
-  font-size: 22;
+  font-size: 30;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: bold;
