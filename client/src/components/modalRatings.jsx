@@ -13,10 +13,10 @@ const AllRatings = styled.div`
   @media (min-width: 0px) {
     grid-template-columns: 40% 40% 20%;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-template-columns: 20% 20% 10% 20% 20% 10%;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-template-columns: 40% 40% 20%;
     height: 30%;
     justify-self: end;
@@ -30,10 +30,10 @@ const Col2 = styled.div`
     grid-column-start: 2;
     justify-self: end;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 2;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 2;
     // position: relative;
   }
@@ -44,28 +44,28 @@ const Col5 = styled.div`
     grid-column-start: 2;
     justify-self: end;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 5;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 2;
   }
 `;
 
 const Col1 = styled.div`
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 1;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 1;
   }
 `;
 
 const Col4 = styled.div`
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 4;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 1;
   }
 `;
@@ -75,10 +75,10 @@ const Col3 = styled.div`
     grid-column-start: 3;
     justify-self: start;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     padding-right: 50px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 3;
     // float: left;
     padding-right: 50px;
@@ -90,11 +90,11 @@ const Col6 = styled.div`
     grid-column-start: 3;
     justify-self: start;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     padding-right: 50px;
     grid-column-start: 6;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 3;
     // float: left;
     padding-right: 50px;
@@ -119,7 +119,7 @@ const Rating = styled.div`
   margin-bottom: 25px;
   font-size: 20;
   // margin: auto;
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     position: absolute;
   }
 `;

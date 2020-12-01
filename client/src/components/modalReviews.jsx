@@ -8,7 +8,7 @@ const Review = styled.div`
   flex-wrap: wrap;
   padding-top: 30px;
   overflow: auto;
-  @media (max-width: 750px) {
+  @media (max-width: 850px) {
     display: grid;
     grid-template-columns: 100%;
     max-width: 90%;
@@ -31,8 +31,8 @@ const Search = styled.input`
   border: 1px solid rgba(192, 192, 192, .7);
   background-color: rgba(211, 211, 211, .2);
   outline: none;
-  @media (max-width: 750px) {
-    width: 90%;
+  @media (max-width: 850px) {
+    width: 95%;
   }
   &:focus {
     border: 2px solid;

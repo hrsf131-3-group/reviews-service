@@ -8,7 +8,7 @@ const Reviews = styled.div`
   width: 100%;
   margin: auto;
   max-width: 1200px;
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-template-columns: 45% 10% 45%;
   }
 `;
@@ -18,70 +18,70 @@ const ModalDiv = styled.div`
 `;
 
 const Rev1 = styled.div`
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     max-width: 900px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     // max-width: 50%;
     grid-column: 1
   }
 `;
 
 const Rev2 = styled.div`
-  max-width: 750px;
-  @media (min-width: 750px) {
+  max-width: 850px;
+  @media (min-width: 850px) {
     max-width: 900px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column: 3
   }
 `;
 
 const Rev3 = styled.div`
-  max-width: 750px;
-  @media (min-width: 750px) {
+  max-width: 850px;
+  @media (min-width: 850px) {
     max-width: 900px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column: 1
   }
 `;
 
 const Rev4 = styled.div`
-  max-width: 750px;
-  @media (max-width: 750px) {
+  max-width: 850px;
+  @media (max-width: 850px) {
     display: none;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     max-width: 900px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column: 3
   }
 `;
 
 const Rev5 = styled.div`
-  max-width: 750px;
-  @media (max-width: 750px) {
+  max-width: 850px;
+  @media (max-width: 850px) {
     display: none;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     max-width: 900px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column: 1
   }
 `;
 
 const Rev6 = styled.div`
-  max-width: 750px;
-  @media (max-width: 750px) {
+  max-width: 850px;
+  @media (max-width: 850px) {
     display: none;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     max-width: 900px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column: 3
   }
 `;

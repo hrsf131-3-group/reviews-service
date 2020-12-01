@@ -46,7 +46,7 @@ const ModalSquare = styled.div`
   overflow: hidden;
   animation: ${TransitionOpen} .4s;
   animation-direction: ${isClicked => isClicked ? 'normal' : 'reverse'};
-  @media (max-width: 750px) {
+  @media (max-width: 850px) {
     height: 95%;
     width: 100%;
     margin: 0 auto;
@@ -71,11 +71,11 @@ const ModalGrid = styled.div`
   display: grid;
   max-height: 95%;
   overflow: auto;
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-template-columns: 100%;
     // overflow: auto;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-template-columns: 40% 60%;
     // overflow: auto;
   }
@@ -84,14 +84,14 @@ const ModalGrid = styled.div`
 const Ratings = styled.div`
   // overflow: auto;
   z-index: 1100;
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     // position: fixed;
   }
 `;
 
 const Reviews = styled.div`
   z-index: 1110;
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column: 2;
   }
 `;

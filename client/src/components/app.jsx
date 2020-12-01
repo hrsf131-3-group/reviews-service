@@ -51,7 +51,7 @@ class App extends React.Component {
     `;
 
     const Service = styled.div`
-      width: 60%;
+      width: 80%;
       margin: auto;
     `;
 

@@ -10,14 +10,14 @@ const AvgRatings = styled.div`
   width: 100%;
   max-width: 1200px;
   color: #222222;
-  overflow: hidden;
+  // overflow: hidden;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 300;
   font-size: 16px;
-  @media (max-width: 750px) {
+  @media (max-width: 850px) {
     display: none;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10%;
     row-gap: 15px;
@@ -54,10 +54,6 @@ const Col3 = styled.div`
   justify-content: flex-end;
   // justify-seld: end;
   float: right;
-`;
-
-const Col6 = styled.div`
-  // grid-column-start: 6;
 `;
 
 const Average = styled.span`
