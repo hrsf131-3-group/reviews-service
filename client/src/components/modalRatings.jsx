@@ -4,19 +4,19 @@ import IndividualRating from './individualRating.jsx';
 
 const AllRatings = styled.div`
   max-width: 100%;
-  font-size: 14;
   display: grid;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 14px;
+  row-gap: 10px;
   @media (min-width: 0px) {
     grid-template-columns: 40% 40% 20%;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-template-columns: 20% 20% 10% 20% 20% 10%;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-template-columns: 40% 40% 20%;
     height: 30%;
     justify-self: end;
@@ -30,10 +30,10 @@ const Col2 = styled.div`
     grid-column-start: 2;
     justify-self: end;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 2;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 2;
     // position: relative;
   }
@@ -44,28 +44,28 @@ const Col5 = styled.div`
     grid-column-start: 2;
     justify-self: end;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 5;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 2;
   }
 `;
 
 const Col1 = styled.div`
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 1;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 1;
   }
 `;
 
 const Col4 = styled.div`
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     grid-column-start: 4;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 1;
   }
 `;
@@ -75,10 +75,10 @@ const Col3 = styled.div`
     grid-column-start: 3;
     justify-self: start;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     padding-right: 50px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 3;
     // float: left;
     padding-right: 50px;
@@ -90,11 +90,11 @@ const Col6 = styled.div`
     grid-column-start: 3;
     justify-self: start;
   }
-  @media (min-width: 750px) {
+  @media (min-width: 850px) {
     padding-right: 50px;
     grid-column-start: 6;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     grid-column-start: 3;
     // float: left;
     padding-right: 50px;
@@ -102,10 +102,11 @@ const Col6 = styled.div`
 `;
 
 const SvgStar = styled.svg`
-  height: 17px;
-  width: 17px;
+  height: 25px;
+  width: 25px;
   fill: currentcolor;
   color: #FF385C;
+  padding-top: 3px;
 `;
 
 const Average = styled.span`
@@ -115,11 +116,11 @@ const Average = styled.span`
 
 const Rating = styled.div`
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 20;
-  margin: auto;
-  @media (min-width: 1000px) {
-    position: fixed;
+  // margin: auto;
+  @media (min-width: 1100px) {
+    position: absolute;
   }
 `;
 
@@ -132,7 +133,7 @@ const Star = styled.div`
 
 const NumReviews = styled.div`
   padding-left: 5px;
-  font-size: 22;
+  font-size: 28px;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: bold;

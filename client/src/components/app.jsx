@@ -19,9 +19,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/homes/100/reviews')
+    var rand = Math.floor(Math.random() * (100 - 1) + 1);
+    axios.get(`/api/homes/${rand}/reviews`)
     .then((response) => {
-      // console.log('app',response.data[0].reviews)
       var ratings = response.data[0].ratings;
       var average = ratings.average;
       delete ratings.average;
@@ -32,7 +32,6 @@ class App extends React.Component {
         reviews: response.data[0].reviews,
         hasReviews: true
       })
-      // console.log('app',this.state.reviews)
     })
     .catch((err) => {
       console.log(err);
@@ -45,12 +44,39 @@ class App extends React.Component {
     if (hasReviews) {
       reviews = <ListingReviews numReviews={this.state.numReviews} average={this.state.average} ratings={this.state.ratings} reviews={this.state.reviews}/>;
     }
+
+    const Static = styled.div`
+      width: 60%;
+      margin: 10px auto;
+    `;
+
+    const Service = styled.div`
+      width: 60%;
+      margin: auto;
+    `;
+
+    const Image = styled.img`
+      width: 100%;
+    `;
+
     return(
       <div>
-        <ListingRating average={this.state.average} numReviews={this.state.numReviews}/>
-        <Ratings {...this.state.ratings}/>
-        {reviews}
+        <Service>
+          <ListingRating average={this.state.average} numReviews={this.state.numReviews}/>
+          <Ratings {...this.state.ratings}/>
+          {reviews}
+        </Service>
+        <Static>
+          <Image src="https://rest-n-react-reviews-bundle.s3-us-west-1.amazonaws.com/location.png"/>
+        </Static>
+        <Static>
+          <Image src="https://rest-n-react-reviews-bundle.s3-us-west-1.amazonaws.com/hosted.png"/>
+        </Static>
+        <Static>
+          <Image src="https://rest-n-react-reviews-bundle.s3-us-west-1.amazonaws.com/thingsToKnow.png"/>
+        </Static>
       </div>
+
     )
   }
 }

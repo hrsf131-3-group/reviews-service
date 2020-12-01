@@ -32,6 +32,7 @@ const Text = styled.div`
   // -webkit-line-clamp: 3;
   // -webkit-box-orient: vertical;
   // overflow: hidden;
+  line-height: 24px;
 `;
 
 const Reviews = styled.div`
@@ -39,7 +40,7 @@ const Reviews = styled.div`
   // padding-right: 65px;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 16px;
 `;
 
@@ -75,12 +76,18 @@ const More = styled.label`
 `;
 
 const IndividualReview = (props) => {
-  // set state for button?
-    // if text has overflow dont show
   var noSpaceLength = props.review_body.split(' ').join('').length;
   let readMoreButton;
+  let trunkedText;
   if (noSpaceLength > 150) {
-    readMoreButton = <More htmlFor={props.modalId || props._id} role="button">read more</More>
+    if (props.modalId) {
+      trunkedText = props.review_body;
+    } else {
+      readMoreButton = <More htmlFor={props._id} role="button">read more</More>
+      trunkedText = <Trunk>{props.review_body}</Trunk>
+    }
+  } else {
+    trunkedText = props.review_body;
   }
   return (
     <div>
@@ -95,10 +102,8 @@ const IndividualReview = (props) => {
           {props.review_month} {props.review_year}
         </Date>
         <Text>
-          <Checkbox type="checkbox" id={props.modalId || props._id}/>
-          <Trunk>
-            {props.review_body}
-          </Trunk>
+          <Checkbox type="checkbox" id={props._id}/>
+          {trunkedText}
           {readMoreButton}
         </Text>
       </Reviews>

@@ -10,7 +10,7 @@ const generateListings = (numListings) => {
   for(var i = 1; i <= numListings; i++) {
     const newListing = {};
     newListing.listing_id = i;
-    var numReviews = Math.floor(Math.random() * (10 - 1) + 1);
+    var numReviews = Math.floor(Math.random() * (30 - 10) + 10);
     if (numReviews === 0) {
       Reviews.create(newListing, (err) => {
         if (err) {
@@ -81,7 +81,7 @@ const generateRatings = (listing, numReviews) => {
     location += locTemp;
     value += valTemp;
 
-    average += Math.round(((cleanTemp + commTemp + checkTemp + accTemp + locTemp + valTemp) / 6) *10) / 10;
+    average += Math.round(((cleanTemp + commTemp + checkTemp + accTemp + locTemp + valTemp) / 6) * 100) / 100;
   }
   listing.ratings = {
     cleanliness: (Math.round((cleanliness / numReviews) * 10) / 10).toFixed(1),
@@ -90,7 +90,7 @@ const generateRatings = (listing, numReviews) => {
     accuracy: (Math.round((accuracy / numReviews) * 10) / 10).toFixed(1),
     location: (Math.round((location / numReviews) * 10) / 10).toFixed(1),
     value: (Math.round((value / numReviews) * 10) / 10).toFixed(1),
-    average: (Math.round((average / numReviews) * 10) / 10).toFixed(1),
+    average: (Math.round((average / numReviews) * 100) / 100).toFixed(2),
   }
 }
 

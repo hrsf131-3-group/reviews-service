@@ -6,9 +6,9 @@ const Review = styled.div`
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
-  padding-top: 15px;
+  padding-top: 30px;
   overflow: auto;
-  @media (max-width: 750px) {
+  @media (max-width: 850px) {
     display: grid;
     grid-template-columns: 100%;
     max-width: 90%;
@@ -31,8 +31,14 @@ const Search = styled.input`
   border: 1px solid rgba(192, 192, 192, .7);
   background-color: rgba(211, 211, 211, .2);
   outline: none;
-  @media (max-width: 750px) {
-    width: 95%;
+  @media (max-width: 850px) {
+    width: 90%;
+  }
+  &:focus {
+    border: 2px solid;
+  }
+  &:focus + svg{
+    stroke-width: 4;
   }
 `;
 
@@ -47,7 +53,8 @@ const Icon = styled.svg`
   stroke-width: 2;
   overflow: visible;
   position: relative;
-  top: 29px;
+  // top: 29px;
+  bottom: 30px;
   left: 15px;
 `;
 
@@ -77,10 +84,8 @@ const ModalReviews = (props) => {
   return (
     <div>
       <Review>
-        {/* <i> */}
-          <Icon viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" ><g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"/></g></Icon>
-        {/* </i> */}
         <Search type="text" placeholder="Search reviews" value={searchValue} onChange={handleChange}></Search>
+        <Icon viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"><g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"/></g></Icon>
         {reviewList}
       </Review>
     </div>
