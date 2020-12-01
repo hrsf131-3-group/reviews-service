@@ -47,7 +47,7 @@ const ModalSquare = styled.div`
   animation: ${TransitionOpen} .4s;
   animation-direction: ${isClicked => isClicked ? 'normal' : 'reverse'};
   @media (max-width: 750px) {
-    height: 100%;
+    height: 95%;
     width: 100%;
     margin: 0 auto;
     overflow: auto;
@@ -83,12 +83,14 @@ const ModalGrid = styled.div`
 
 const Ratings = styled.div`
   // overflow: auto;
+  z-index: 1100;
   @media (min-width: 1000px) {
     // position: fixed;
   }
 `;
 
 const Reviews = styled.div`
+  z-index: 1110;
   @media (min-width: 1000px) {
     grid-column: 2;
   }

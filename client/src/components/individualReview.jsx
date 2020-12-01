@@ -40,7 +40,7 @@ const Reviews = styled.div`
   // padding-right: 65px;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 16px;
 `;
 

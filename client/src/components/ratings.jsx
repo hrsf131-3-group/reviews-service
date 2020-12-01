@@ -6,22 +6,21 @@ import styled from 'styled-components';
 const AvgRatings = styled.div`
   margin: auto;
   display: grid;
-  overflow: auto;
+  // overflow: auto;
   width: 100%;
   max-width: 1200px;
-  flex-flow: column wrap;
   color: #222222;
   overflow: hidden;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 16px;
   @media (max-width: 750px) {
     display: none;
   }
   @media (min-width: 750px) {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 80px;
-    // row-gap: 20px;
+    column-gap: 10%;
+    row-gap: 15px;
     height: 15%;
   }
 `;
@@ -34,26 +33,25 @@ const Col2 = styled.span`
   // padding-left: 80px;
 `;
 
-const Col5 = styled.div`
-  // grid-column-start: 5;
-  justify-self: stretch;
-`;
-
 const Col1 = styled.div`
   grid-column-start: 1;
-  // display: flex;
+  display: flex;
   // justify-content: flex-start;
-  // align-items: center;
-  // justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const Col4 = styled.div`
   grid-column-start: 2;
+  display: flex;
+  justify-content: space-between;
 `;
 
-const Col3 = styled.span`
+const Col3 = styled.div`
   // grid-column-start: 3;
-  margin: auto;
+  // margin: auto;
+  display: flex;
+  justify-content: flex-end;
   // justify-seld: end;
   float: right;
 `;
@@ -63,18 +61,20 @@ const Col6 = styled.div`
 `;
 
 const Average = styled.span`
-  display: inline-block;
+  display: flex;
   // position: relative;
-  white-space: nowrap;
-  float: right;
-  // justify-item: center;
+  // white-space: nowrap;
+  // float: right;
+  font-size: 12px;
+  font-weight: 600;
+  justify-content: flex-end;
 `;
 
 const Ratings = (props) => (
   <div>
     <AvgRatings>
       <Col1>
-        <span>Cleanliness</span>
+        <div>Cleanliness</div>
         <Col3>
           <Col2>
             <IndividualRating rating={props.cleanliness}/>

@@ -32,7 +32,7 @@ const Search = styled.input`
   background-color: rgba(211, 211, 211, .2);
   outline: none;
   @media (max-width: 750px) {
-    width: 95%;
+    width: 90%;
   }
   &:focus {
     border: 2px solid;
@@ -54,7 +54,7 @@ const Icon = styled.svg`
   overflow: visible;
   position: relative;
   // top: 29px;
-  bottom: 28px;
+  bottom: 30px;
   left: 15px;
 `;
 
