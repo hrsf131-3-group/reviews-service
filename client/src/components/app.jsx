@@ -46,12 +46,12 @@ class App extends React.Component {
     }
 
     const Static = styled.div`
-      width: 80%;
+      width: 60%;
       margin: 10px auto;
     `;
 
     const Service = styled.div`
-      width: 80%;
+      width: 60%;
       margin: auto;
     `;
 
