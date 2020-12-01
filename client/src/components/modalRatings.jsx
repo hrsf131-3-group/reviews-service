@@ -106,6 +106,7 @@ const SvgStar = styled.svg`
   width: 25px;
   fill: currentcolor;
   color: #FF385C;
+  padding-top: 3px;
 `;
 
 const Average = styled.span`
@@ -132,7 +133,7 @@ const Star = styled.div`
 
 const NumReviews = styled.div`
   padding-left: 5px;
-  font-size: 30;
+  font-size: 28px;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: bold;

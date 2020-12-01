@@ -21,6 +21,7 @@ const AvgRatings = styled.div`
   @media (min-width: 750px) {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 80px;
+    // row-gap: 20px;
     height: 15%;
   }
 `;

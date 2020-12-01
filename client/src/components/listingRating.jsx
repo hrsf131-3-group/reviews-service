@@ -16,16 +16,17 @@ const Star = styled.div`
 
 const Average = styled.div`
   padding-left: 5px;
-  font-size: 22;
+  font-size: 22px;
   color: #222222;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 600;
 `;
 const SvgStar = styled.svg`
-  height: 17px;
-  width: 17px;
+  height: 18px;
+  width: 18px;
   fill: currentcolor;
   color: #FF385C;
+  padding-top: 3px;
 `;
 
 const ListingRating = (props) => (
