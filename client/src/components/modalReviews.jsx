@@ -12,12 +12,12 @@ const Review = styled.div`
     display: grid;
     grid-template-columns: 100%;
     max-width: 90%;
-    // height: 50%;
+    height: 50%;
     overflow: hidden;
   }
   @media (min-width: 1000px) {
     grid-template-columns: 100%;
-    // height: 50%;
+    height: 50%;
     overflow: scroll;
   }
 `;
@@ -54,7 +54,7 @@ const Icon = styled.svg`
   overflow: visible;
   position: relative;
   // top: 29px;
-  bottom: 28px;
+  bottom: 30px;
   left: 15px;
 `;
 
