@@ -1,6 +1,13 @@
 # Project Name
+MERN Vacation Rental Booking Application
 
-> Project description
+This is the reviews component which allows users to read average ratings and all user reviews for a particular listing. Allows you to search reviews by keywords.
+
+## Preview
+
+<img src="./public/Home.png">
+<img src="./public/Modal.png">
+<img src="./public/Search.png">
 
 ## Related Projects
 
@@ -11,29 +18,32 @@
 
 ## Table of Contents
 
+1. [Seeging](#Seeding)
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
+## Seeding
+```
+Run "npm run seed-db" command to generate data and store it in database
+```
 
-> Run the "seed-db" command with npm run to generate data and store it in database
+## Usage
+```
+Run "npm install" to install all dependencies
+Run "npm start" to start server at localhost 3003
+```
 
 ## Requirements
-
+```
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 - etc
+```
 
 ## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
+```
+Run "npm run react-dev" to start webpack
 ```
 
